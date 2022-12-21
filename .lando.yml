@@ -14,9 +14,20 @@ services:
       environment:
         PHP_IDE_CONFIG: "serverName=appserver"
         DRUSH_OPTIONS_URI: "https://decoupled.lndo.site"
+    build_as_root:
+      - apt update -y && apt install -y apt-transport-https build-essential unzip
+      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - apt-get install -y nodejs
+      - chown -R www-data /usr/lib/node_modules
+      - chown -R www-data /usr/bin
     build:
       - composer install
   next:
+    type: node:16
+    port: 3000
+    build_as_root:
+      - apt update -y && apt install -y apt-transport-https build-essential unzip
+  next2:
     type: node:16
     port: 3000
     build_as_root:
@@ -26,6 +37,8 @@ proxy:
     - decoupled.lndo.site
   next:
     - next.decoupled.lndo.site:3000
+  next2:
+    - next2.decoupled.lndo.site:3000
 tooling:
   drush:
     service: appserver
