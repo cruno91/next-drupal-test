@@ -1,0 +1,38 @@
+name: decoupled
+recipe: drupal9
+config:
+  php: '8.1'
+  via: apache
+  webroot: ./web
+  database: mysql
+  xdebug: true
+env_file:
+  - .lando.env
+services:
+  appserver:
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: "serverName=appserver"
+        DRUSH_OPTIONS_URI: "https://decoupled.lndo.site"
+    build:
+      - composer install
+  next:
+    type: node:16
+    port: 3000
+    build_as_root:
+      - apt update -y && apt install -y apt-transport-https build-essential unzip
+proxy:
+  appserver:
+    - decoupled.lndo.site
+  next:
+    - next.decoupled.lndo.site:3000
+tooling:
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush --root=/app/web
+  npm:
+    service: next
+  node:
+    service: next
+  npx:
+    service: next
