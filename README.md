@@ -1,3 +1,5 @@
+## Setup
+
 1. `lando start`
 2. Navigate to: https://decoupled.lndo.site
 3. Install Drupal with "Standard" profile
