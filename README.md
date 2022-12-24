@@ -13,7 +13,7 @@
 5. Enable NextJS JSON:API module
 6. Add a pathauto pattern alias for Articles as blog/[node:title]
 7. Create an Article
-8. Copy the contents of the .env.local example below into `next` and `next2`
+8. Copy the contents of the .env.local example below into `next`
 9. `lando next`
 10. Navigate to: http://next.decoupled.lndo.site
 11. `lando storybook`
