@@ -27,9 +27,9 @@ services:
     port: 3000
     build_as_root:
       - apt update -y && apt install -y apt-transport-https build-essential unzip
-  next2:
+  storybook:
     type: node:16
-    port: 3000
+    port: 6006
     build_as_root:
       - apt update -y && apt install -y apt-transport-https build-essential unzip
 proxy:
@@ -37,15 +37,23 @@ proxy:
     - decoupled.lndo.site
   next:
     - next.decoupled.lndo.site:3000
-  next2:
-    - next2.decoupled.lndo.site:3000
+  storybook:
+    - storybook.decoupled.lndo.site:6006
 tooling:
   drush:
     service: appserver
     cmd: /app/vendor/bin/drush --root=/app/web
   npm:
-    service: next
+    service: appserver
   node:
-    service: next
+    service: appserver
   npx:
+    service: appserver
+  next:
     service: next
+    cmd: npm run dev
+    dir: /app/next
+  storybook:
+    service: storybook
+    cmd: npm run storybook
+    dir: /app/next
