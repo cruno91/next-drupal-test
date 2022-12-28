@@ -21,7 +21,7 @@ export const Button = ({
   return (
     <a href={link}>
       {icon ? (
-        <Icon name={icon.name} style={icon.style}/>
+        <Icon {...icon}/>
       ) : (
         <></>
       )}
