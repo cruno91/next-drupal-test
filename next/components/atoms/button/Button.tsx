@@ -19,7 +19,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <a href={link}>
+    <a href={link} {...props}>
       {icon ? (
         <Icon {...icon}/>
       ) : (
