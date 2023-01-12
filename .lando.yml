@@ -27,6 +27,8 @@ services:
     port: 3000
     build_as_root:
       - apt update -y && apt install -y apt-transport-https build-essential unzip
+    build:
+      - cd next && npm install
   storybook:
     type: node:16
     port: 6006
