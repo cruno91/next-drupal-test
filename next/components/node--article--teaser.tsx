@@ -1,9 +1,8 @@
+import Image from "next/image"
 import Link from "next/link"
 import { DrupalNode } from "next-drupal"
 
 import { absoluteUrl, formatDate } from "lib/utils"
-
-import { NextImage } from "./atoms/image/NextImage"
 
 interface NodeArticleTeaserProps {
   node: DrupalNode
@@ -26,7 +25,7 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
       </div>
       {node.field_image && (
         <figure className="my-4">
-          <NextImage
+          <Image
             src={absoluteUrl(node.field_image.uri.url)}
             width={768}
             height={480}
