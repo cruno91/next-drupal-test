@@ -10,17 +10,19 @@ interface ButtonProps {
   link: string;
   icon?: Icon;
   label: string;
+  classes: string;
 }
 
 export const Button = ({
   link = '#',
   icon,
   label = 'Button',
+  classes='',
   ...props
 }: ButtonProps) => {
   return (
-    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-      <a href={link} {...props}>
+    <button className={classes} {...props}>
+      <a href={link}>
         {icon ? (
           <Icon {...icon}/>
         ) : (

@@ -12,7 +12,8 @@ type Story = StoryObj<typeof Button>;
 export const PrimaryButton: Story = {
   args: {
     link: '#',
-    label: 'Button'
+    label: 'Button',
+    classes: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded'
   },
 };
 
@@ -23,6 +24,7 @@ export const PrimaryButtonIcon: Story = {
       style: 'regular',
       name: 'flag'
     },
-    label: 'Button'
+    label: 'Button',
+    classes: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded'
   },
 };
