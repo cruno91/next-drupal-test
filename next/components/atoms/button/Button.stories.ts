@@ -17,7 +17,15 @@ export const PrimaryButton: Story = {
   },
 };
 
-export const PrimaryButtonIcon: Story = {
+export const SecondaryButton: Story = {
+  args: {
+    link: '#',
+    label: 'Button',
+    buttonType: 'secondary'
+  },
+};
+
+export const IconButton: Story = {
   args: {
     link: '#',
     icon: {
@@ -26,13 +34,5 @@ export const PrimaryButtonIcon: Story = {
     },
     label: 'Button',
     buttonType: 'primary'
-  },
-};
-
-export const SecondaryButton: Story = {
-  args: {
-    link: '#',
-    label: 'Button',
-    buttonType: 'secondary'
   },
 };
