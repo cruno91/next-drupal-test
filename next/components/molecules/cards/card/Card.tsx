@@ -25,7 +25,13 @@ export const Card = ({
   return (
     <Link href={link}>
       <div className={styles.card}>
-        <Image className={styles.card__image} src={imagePath} alt={imageAlt} width={384} height={297}/>
+        <Image 
+          className={styles.card__image} 
+          src={imagePath} 
+          alt={imageAlt} 
+          width={384} 
+          height={297}
+        />
           <div className={styles.card__text_wrapper}>
             <div className={styles.card__title}>{title}</div>
             <p className={styles.card__description}>
