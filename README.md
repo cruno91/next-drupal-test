@@ -10,7 +10,7 @@
   - Database: drupal10
   - Host: database
 
-5. Enable NextJS JSON:API module
+5. `lando drush en next_jsonapi admin_toolbar_tools -y`
 6. Add a pathauto pattern alias for Articles as blog/[node:title]
 7. Create an Article
 8. Copy the contents of the .env.local example below into `next`
