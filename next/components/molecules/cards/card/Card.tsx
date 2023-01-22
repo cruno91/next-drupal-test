@@ -2,7 +2,8 @@ import React from "react";
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {Icon} from "../../../atoms/icon/Icon";
+import styles from './Card.module.css';
+import {Icon} from '../../../atoms/icon/Icon';
 
 interface CardProps {
   title: string;
@@ -23,15 +24,15 @@ export const Card = ({
 }: CardProps) => {
   return (
     <Link href={link}>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <Image className="w-full" src={imagePath} alt={imageAlt} width={384} height={297}/>
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="text-gray-700 text-base">
+      <div className={styles.card}>
+        <Image className={styles.card__image} src={imagePath} alt={imageAlt} width={384} height={297}/>
+          <div className={styles.card__text_wrapper}>
+            <div className={styles.card__title}>{title}</div>
+            <p className={styles.card__description}>
               {description}
             </p>
           </div>
-          <div className="px-6 pt-4 pb-2">
+          <div className={styles.card__tags}>
             <Icon name="tag" style="regular"/>
             {tags}
           </div>
