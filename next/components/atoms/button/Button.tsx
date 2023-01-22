@@ -16,8 +16,8 @@ interface ButtonProps {
 export const Button = ({
   link = '#',
   icon,
-  label = 'Button',
-  classes='',
+  label,
+  classes,
   ...props
 }: ButtonProps) => {
   return (
