@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './Card.module.css';
-import {Icon} from '../../../atoms/icon/Icon';
+import { Icon } from '../../../atoms/icon/Icon';
 
 interface CardProps {
   title: string;
