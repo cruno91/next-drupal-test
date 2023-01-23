@@ -33,7 +33,9 @@ export const Card = ({
           height={297}
         />
           <div className={styles.card__text_wrapper}>
-            <div className={styles.card__title}>{title}</div>
+            <div className={styles.card__title}>
+              {title}
+            </div>
             <p className={styles.card__description}>
               {description}
             </p>
