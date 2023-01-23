@@ -1,0 +1,23 @@
+.card {
+  @apply max-w-sm rounded overflow-hidden shadow-lg;
+}
+
+.card__image {
+  @apply w-full;
+}
+
+.card__text_wrapper {
+  @apply px-6 py-4;
+}
+
+.card__title {
+  @apply font-bold text-xl mb-2;
+}
+
+.card__description {
+  @apply text-gray-700 text-base;
+}
+
+.card__tags {
+  @apply px-6 pt-4 pb-2;
+}

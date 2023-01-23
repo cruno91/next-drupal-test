@@ -12,17 +12,27 @@ type Story = StoryObj<typeof Button>;
 export const PrimaryButton: Story = {
   args: {
     link: '#',
-    label: 'Button'
+    label: 'Button',
+    buttonType: 'primary'
   },
 };
 
-export const PrimaryButtonIcon: Story = {
+export const SecondaryButton: Story = {
+  args: {
+    link: '#',
+    label: 'Button',
+    buttonType: 'secondary'
+  },
+};
+
+export const IconButton: Story = {
   args: {
     link: '#',
     icon: {
       style: 'regular',
       name: 'flag'
     },
-    label: 'Button'
+    label: 'Button',
+    buttonType: 'primary'
   },
 };
