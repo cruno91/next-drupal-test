@@ -7,11 +7,11 @@
 }
 
 .cardGridItem__2_col {
-  @apply my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3;
+  @apply my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2;
 }
 .cardGridItem__3_col {
   @apply my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3;
 }
 .cardGridItem__4_col {
-  @apply my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3;
+  @apply my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4;
 }
