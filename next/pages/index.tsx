@@ -4,7 +4,7 @@ import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import {absoluteUrl} from "../lib/utils";
 
-import { Layout } from "components/layout"
+import { Layout } from "components/base/layout"
 import { CardGrid } from "components/organisms/card-grid/CardGrid";
 
 export async function getStaticProps(

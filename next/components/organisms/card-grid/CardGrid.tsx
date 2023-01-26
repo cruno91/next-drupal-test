@@ -13,7 +13,7 @@ interface Card {
 }
 
 interface CardGridProps {
-  columns?: 2 | 3 | 4;
+  columns?: '2' | '3' | '4';
   cards: Card[];
 }
 
@@ -24,13 +24,13 @@ export const CardGrid = ({
   cards
 }: CardGridProps) => {
   switch (columns) {
-    case 2:
+    case '2':
       colClass = styles.cardGridItem__2_col;
       break;
-    case 4:
+    case '4':
       colClass = styles.cardGridItem__4_col;
       break;
-    case 3:
+    case '3':
     default:
       colClass = styles.cardGridItem__3_col;
       break;

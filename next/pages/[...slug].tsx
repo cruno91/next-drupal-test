@@ -5,7 +5,7 @@ import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import { NodeArticle } from "components/templates/node/article/node--article"
 import { NodeBasicPage } from "components/templates/node/basic-page/node--basic-page"
-import { Layout } from "components/layout"
+import { Layout } from "components/base/layout"
 
 /**
  * Expected node types to display on this path (...slug from Drupal).
