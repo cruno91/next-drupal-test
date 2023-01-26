@@ -7,27 +7,14 @@ import { NodeArticle } from "components/templates/node/article/node--article"
 import { NodeBasicPage } from "components/templates/node/basic-page/node--basic-page"
 import { Layout } from "components/layout"
 
+/**
+ * Expected node types to display on this path (...slug from Drupal).
+ */
 const RESOURCE_TYPES = ["node--page", "node--article"]
 
-interface NodePageProps {
-  resource: DrupalNode
-}
-
-export default function NodePage({ resource }: NodePageProps) {
-  if (!resource) return null
-
-  return (
-    <Layout>
-      <Head>
-        <title>{resource.title}</title>
-        <meta name="description" content="A Next.js site powered by Drupal." />
-      </Head>
-      {resource.type === "node--page" && <NodeBasicPage node={resource} />}
-      {resource.type === "node--article" && <NodeArticle node={resource} />}
-    </Layout>
-  )
-}
-
+/**
+ * Generates a list of pages that will be pre-rendered at build time.
+ */
 export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
   return {
     paths: await drupal.getStaticPathsFromContext(RESOURCE_TYPES, context),
@@ -35,6 +22,9 @@ export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
   }
 }
 
+/**
+ * The page that will be pre-rendered at build time.
+ */
 export async function getStaticProps(
   context
 ): Promise<GetStaticPropsResult<NodePageProps>> {
@@ -46,8 +36,11 @@ export async function getStaticProps(
     }
   }
 
+  // Determine the content type being displayed from the path.
   const type = path.jsonapi.resourceName
 
+  // Modify query parameters of data to fetch depending on what content type is
+  // being retrieved.
   let params = {}
   if (type === "node--article") {
     params = {
@@ -55,6 +48,7 @@ export async function getStaticProps(
     }
   }
 
+  // Fetch the data from Drupal.
   const resource = await drupal.getResourceFromContext<DrupalNode>(
     path,
     context,
@@ -79,9 +73,29 @@ export async function getStaticProps(
     }
   }
 
+  // Return the fetched data.
   return {
     props: {
       resource,
     },
   }
+}
+
+interface NodePageProps {
+  resource: DrupalNode
+}
+
+export default function NodePage({ resource }: NodePageProps) {
+  if (!resource) return null
+
+  return (
+    <Layout>
+      <Head>
+        <title>{resource.title}</title>
+        <meta name="description" content="A Next.js site powered by Drupal." />
+      </Head>
+      {resource.type === "node--page" && <NodeBasicPage node={resource} />}
+      {resource.type === "node--article" && <NodeArticle node={resource} />}
+    </Layout>
+  )
 }
