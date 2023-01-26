@@ -1,7 +1,7 @@
 import { DrupalNode } from "next-drupal"
 import { absoluteUrl, formatDate } from "lib/utils"
 
-import { Card } from "../../molecules/cards/card/Card";
+import { Card } from "../../../molecules/cards/card/Card";
 
 interface NodeArticleTeaserProps {
   node: DrupalNode

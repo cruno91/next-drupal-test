@@ -4,7 +4,7 @@ import { DrupalNode } from "next-drupal"
 
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
-import { NodeArticleTeaser } from "components/templates/node/node--article--teaser"
+import { NodeArticleTeaser } from "components/templates/node/article/node--article--teaser"
 
 interface IndexPageProps {
   nodes: DrupalNode[]
