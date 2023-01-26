@@ -25,14 +25,14 @@ export const CardGrid = ({
 }: CardGridProps) => {
   switch (columns) {
     case 2:
-      colClass = styles.cardGrid__2_col;
+      colClass = styles.cardGridItem__2_col;
       break;
     case 4:
-      colClass = styles.cardGrid__4_col;
+      colClass = styles.cardGridItem__4_col;
       break;
     case 3:
     default:
-      colClass = styles.cardGrid__3_col;
+      colClass = styles.cardGridItem__3_col;
       break;
   }
 
