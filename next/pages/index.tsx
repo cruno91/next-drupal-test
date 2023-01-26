@@ -5,7 +5,6 @@ import { drupal } from "lib/drupal"
 import {absoluteUrl} from "../lib/utils";
 
 import { Layout } from "components/layout"
-import { NodeArticleTeaser } from "components/templates/node/article/node--article--teaser"
 import { CardGrid } from "components/organisms/card-grid/CardGrid";
 
 export async function getStaticProps(
