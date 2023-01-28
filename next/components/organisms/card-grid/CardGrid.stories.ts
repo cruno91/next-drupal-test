@@ -12,7 +12,7 @@ type Story = StoryObj<typeof CardGrid>;
 
 export const CardGrids: Story = {
   args: {
-    columns: 3,
+    columns: '3',
     cards: cards
   },
 }
