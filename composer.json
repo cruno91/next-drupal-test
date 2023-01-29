@@ -22,6 +22,7 @@
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
         "drupal/next": "^1.6",
+        "drupal/paragraphs": "^1.15",
         "drush/drush": "^11.4"
     },
     "conflict": {
