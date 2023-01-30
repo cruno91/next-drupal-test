@@ -39,7 +39,7 @@ export const CardGrid = ({
   return (
     <div className={styles.cardGrid}>
         {cards.map((card, index) => (
-          <div className={colClass}>
+          <div className={colClass} key={index}>
             <Card {...card} />
           </div>
         ))}
