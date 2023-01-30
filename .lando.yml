@@ -1,7 +1,7 @@
 name: decoupled
 recipe: drupal10
 config:
-  php: '8.1'
+  php: '8.2'
   via: apache
   webroot: ./web
   database: mysql
@@ -23,7 +23,7 @@ services:
     build:
       - composer install
   next:
-    type: node:16
+    type: node:18
     port: 3000
     build_as_root:
       - apt update -y && apt install -y apt-transport-https build-essential unzip
