@@ -16,7 +16,7 @@ services:
         DRUSH_OPTIONS_URI: "https://decoupled.lndo.site"
     build_as_root:
       - apt update -y && apt install -y apt-transport-https build-essential unzip
-      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - curl -sL https://deb.nodesource.com/setup_18.x | bash -
       - apt-get install -y nodejs
       - chown -R www-data /usr/lib/node_modules
       - chown -R www-data /usr/bin
@@ -30,7 +30,7 @@ services:
     build:
       - cd next && npm install
   storybook:
-    type: node:16
+    type: node:18
     port: 6006
     build_as_root:
       - apt update -y && apt install -y apt-transport-https build-essential unzip
