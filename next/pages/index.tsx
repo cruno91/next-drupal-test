@@ -34,9 +34,9 @@ interface IndexPageProps {
   nodes: DrupalNode[]
 }
 
-const cards = [];
 
 export default function IndexPage({ nodes }: IndexPageProps) {
+  const cards = [];
   if (nodes.length > 0) {
     nodes.forEach((node) => {
       cards.push({
